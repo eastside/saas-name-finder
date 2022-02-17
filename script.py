@@ -20,15 +20,21 @@ if a word
 parser.add_argument(
     'suffixes', type=str, nargs='+', help='list of suffixes to check, i.e., `.app` or`.dev`'
 )
-meh_word_endings = ['ied', 's', 'ing', 'ly', 'ize', 'able', 'ish', 'er', 'iest', 'ate', 'ism']
+meh_word_endings = ['ied', 's', 'ing', 'ly', 'ize', 'able', 'ish', 'er', 'iest', 'ate', 'ism', 'ed']
 parser.add_argument(
     '--ban-meh-word-endings', 
     default=True, 
     help=f"Words that end in {meh_word_endings} will not be checked"
 )
+parser.add_argument(
+    '--max-len',
+    default=7,
+    help=f"Words longer than this will not be checked"
+)
 args = parser.parse_args()
 suffixes = args.suffixes
 ban_meh_word_endings = args.ban_meh_word_endings
+max_len = args.max_len
 
 import os
 import sys
@@ -97,6 +103,8 @@ F_Cyan = "\x1b[36m"
 
 if __name__ == "__main__":
     print(F_Blue + "finding your next product name!" + COLOR_END)
+    print(F_Cyan + f"skipping words ending in {meh_word_endings}" + COLOR_END)
+    print(F_Cyan + f"skipping words longer than {max_len} characters" + COLOR_END)
     print(F_Yellow + f"if a name appears below, it's available under ALL suffixes {', '.join(suffixes)}!" + COLOR_END)
     count = 0
     matches = 0
@@ -108,6 +116,9 @@ if __name__ == "__main__":
 
             # These seem like bad names
             if ban_meh_word_endings and any(map(name.endswith, meh_word_endings)):
+                continue
+
+            if len(name) > max_len:
                 continue
 
             count += 1
