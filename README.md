@@ -1,18 +1,23 @@
-How to install
+# How to install
 
-Open up terminal.
+You'll need Python3 installed. :)
 
-Find the directory where you installed this script and cd into it.
+Download the script. (Go to "Code" then "Download." Unpack the zip and remember where it is.)
 
-Activate a Python3 virtual environment with...
+Open up terminal. Change directory to where-ever you unpacked the zip.
 
+Activate a Python3 virtual environment and install (the one) requirements...
 
     python3 -m venv venv
     source ./venv/bin/activate
     pip install -r requirements.txt
 
+# How to use
 
-Now run the script with...
-
+Run the script with...
 
     python3 script.py .app app.com .tech tech.com < words.txt
+
+This'll check for all domains with an English prefix that are available with the given suffix.
+
+So, like, right now, wheat.app is available! Grab it quick!
