@@ -6,7 +6,7 @@ Download the script. (Go to "Code" then "Download." Unpack the zip and remember 
 
 Open up terminal. Change directory to where-ever you unpacked the zip.
 
-Activate a Python3 virtual environment and install (the one) requirements...
+Activate a Python3 virtual environment and install requirements...
 
     python3 -m venv venv
     source ./venv/bin/activate
