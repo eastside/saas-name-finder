@@ -16,8 +16,8 @@ Activate a Python3 virtual environment and install requirements...
 
 Run the script with...
 
-    python3 script.py .app app.com .tech tech.com < words.txt
+    $ python3 script.py .app .dev < words.txt
+    
+Any words that appear will have been found to be available under ALL suffixes.
 
-This'll check for all domains with an English prefix that are available with the given suffix.
-
-So, like, right now, wheat.app is available! Grab it quick!
+So like, if "wheat" appeared, it would be available under BOTH .app AND .dev.
