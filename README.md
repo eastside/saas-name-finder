@@ -1,3 +1,7 @@
+# What this do?
+
+It tries to find a name for your next Saas product! Assuming you want a simple plain name like, say, Square or Medium, and you're cool with another generic TLD besides .com (which is crowded).
+
 # How to install
 
 You'll need Python3 installed. :)
